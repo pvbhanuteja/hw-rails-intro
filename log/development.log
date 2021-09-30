@@ -51,3 +51,83 @@ ORDER BY c.conname
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
   [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Chicken Run"], ["rating", "G"], ["release_date", "2000-06-21 00:00:00.000000"], ["created_at", "2021-09-27 23:34:40.388370"], ["updated_at", "2021-09-27 23:34:40.388370"]]
   [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 173.219.167.170 at 2021-09-30 01:45:10 +0000
+Cannot render console from 173.219.167.170! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (11.6ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 248ms (Views: 243.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/movies?sort=title" for 173.219.167.170 at 2021-09-30 01:45:13 +0000
+Cannot render console from 173.219.167.170! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title"}
+  [1m[36mMovie Load (1.6ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY title ASC[0m
+  Rendered movies/index.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/movies?sort=release_date" for 173.219.167.170 at 2021-09-30 01:45:14 +0000
+Cannot render console from 173.219.167.170! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"release_date"}
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date ASC
+  Rendered movies/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 19.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies?sort=title" for 173.219.167.170 at 2021-09-30 01:45:16 +0000
+Cannot render console from 173.219.167.170! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY title ASC[0m
+  Rendered movies/index.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 44ms (Views: 43.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?sort=release_date" for 173.219.167.170 at 2021-09-30 01:45:17 +0000
+Cannot render console from 173.219.167.170! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"release_date"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date ASC
+  Rendered movies/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?sort=title" for 173.219.167.170 at 2021-09-30 01:45:18 +0000
+Cannot render console from 173.219.167.170! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY title ASC[0m
+  Rendered movies/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 18.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?sort=release_date" for 173.219.167.170 at 2021-09-30 01:45:19 +0000
+Cannot render console from 173.219.167.170! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"release_date"}
+  [1m[35mMovie Load (0.7ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date ASC
+  Rendered movies/index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies?sort=title" for 173.219.167.170 at 2021-09-30 01:45:20 +0000
+Cannot render console from 173.219.167.170! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title"}
+  [1m[36mMovie Load (0.7ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY title ASC[0m
+  Rendered movies/index.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.7ms)
