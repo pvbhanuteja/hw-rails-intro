@@ -8,9 +8,16 @@ class MoviesController < ApplicationController
   
     def index
       @movies = Movie.all
+      @all_ratings = Movie.ratings
+      @ratings_hash = @all_ratings.map {|key| [key, 1]}.to_h
       sort = params[:sort]
+      if (params[:ratings] != nil)
+      @ratings_hash = params[:ratings]
+      @movies = @movies.where(:rating => @ratings_hash.keys)
+      session[:ratings] = @ratings_hash
+      end
       # p params
-      # p sort
+      p @ratings_hash
       case sort
       when 'title'
         @title_class = 'bg_highlight'
