@@ -6,7 +6,7 @@
   Include:
   <% @all_ratings.each do |rating| %>
     <%= rating %>
-    <%= check_box_tag "ratings[#{rating}]" %>
+    <%= check_box_tag "ratings[#{rating}]", 1 , selected_ratings(rating), id: "ratings_#{rating}" %>
   <% end %>
   <%= submit_tag 'Refresh', :class => 'btn btn-primary', :id => 'ratings_submit' %>
 <% end %>
@@ -14,11 +14,11 @@
 <table class="table table-striped col-md-12" id="movies">
   <thead>
     <tr>
-      <th class="<%= @title_class %>">
+      <th class="<%= bg_highlight('title') %>">
         <%= link_to 'Movie Title', movies_path(:sort => 'title'), :id => 'title_header' %>
       </th>
       <th>Rating</th>
-      <th class="<%= @release_date_class %>">
+      <th class="<%= bg_highlight('release_date') %>">
         <%= link_to 'Release Date', movies_path(:sort => 'release_date'), :id => 'release_date_header' %>
       </th>
       <th>More Info</th>
